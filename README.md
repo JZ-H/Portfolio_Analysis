@@ -1,3 +1,5 @@
+
+
 # Portfolio Analysis
 
  Group Project for Asset Pricing Course
@@ -16,3 +18,44 @@
 
 <img src='https://img.shields.io/badge/matplotlib-v3.3.4-green.svg?style=flat' align='left' >
 
+**Do Not Use `for` in Backtest**
+
+
+
+## Assignment
+
+- [x] Calculation of Net Value with position views in class `Backtest`
+
+  DDL: 3.23
+
+- [ ] Graph Functions for Backtest
+
+  DDL: 3.23
+
+- [ ] Backtest Function in class `Backtest`
+
+  DDL:3.23
+
+- [ ] Data Clean for Macro data
+
+  DDL: 3.20
+
+- [ ] Risk-Parity Model 
+
+  DDL: 3.28
+
+- [ ] Machine Learning for Subjective Views
+
+  DDL: 4.5
+
+- [ ] BL Model
+
+  DDL: 4.15
+
+- [ ] Backtest for Whole Model
+
+  DDL: 4.17
+
+- [ ] Presentation or Report
+
+  DDL: 4.23
