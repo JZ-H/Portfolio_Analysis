@@ -32,29 +32,21 @@
 
   DDL: 3.23
 
+- [ ] Risk-Parity Model + Data Clean
+
+  DDL: 3.25
+
 - [ ] Backtest Function in class `Backtest`
 
-  DDL:3.23
-
-- [ ] Data Clean for Macro data
-
-  DDL: 3.20
-
-- [ ] Risk-Parity Model 
-
-  DDL: 3.28
+  DDL: 3.23
 
 - [ ] Machine Learning for Subjective Views
 
-  DDL: 4.5
-
-- [ ] BL Model
-
   DDL: 4.15
 
-- [ ] Backtest for Whole Model
+- [ ] BL Model + Backtest for Whole Model
 
-  DDL: 4.17
+  DDL: 4.15
 
 - [ ] Presentation or Report
 
