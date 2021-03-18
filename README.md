@@ -32,9 +32,9 @@
 
   DDL: 3.23
 
-- [ ] Risk-Parity Model + Data Clean
+- [ ] Data Clean
 
-  DDL: 3.25
+  DDL: 3.23
 
 - [ ] Backtest Function in class `Backtest`
 
