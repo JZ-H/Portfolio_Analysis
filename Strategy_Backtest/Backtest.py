@@ -24,19 +24,28 @@ class Backtest:
 
     
     def maxdown(self):
-    
+        df_asset = self.df_asset
+        md = ((df_asset.cummax()-df_asset)/df_asset).max()
+        return md
     
     def annualized_return(self):
-        
+        YR = self.df_log_return
+        return YR*12
     
     def annualized_volatility(self):
+        df_log_return  = self.df_log_return 
+        YV = np.std(df_log_return) * np.sqrt(12)
+        return YV
         
-        
-    def shape(self):
-        
+    def sharpe(self):
+        ER = self.df_log_return
+        RF = self.df_rf
+        YV = np.std(self.df_log_return) * np.sqrt(12)
+        return (ER-RF)/YV
     
     def net_value(self):
-        
+        return self.df_asset
+
         
 
     def output_info(self):
