@@ -28,15 +28,15 @@
 
   DDL: 3.23
 
-- [ ] Graph Functions for Backtest
+- [x] Graph Functions for Backtest
 
   DDL: 3.23
 
-- [ ] Data Clean
+- [x] Data Clean
 
   DDL: 3.23
 
-- [ ] Backtest Function in class `Backtest`
+- [x] Backtest Function in class `Backtest`
 
   DDL: 3.23
 
