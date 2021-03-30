@@ -19,3 +19,37 @@
 <img src='https://img.shields.io/badge/matplotlib-v3.3.4-green.svg?style=flat' align='left' >
 
 **Do Not Use `for` in Backtest**
+
+
+
+## Assignment
+
+- [x] Calculation of Net Value with position views in class `Backtest`
+
+  DDL: 3.23
+
+- [x] Graph Functions for Backtest
+
+  DDL: 3.23
+
+- [x] Data Clean
+
+  DDL: 3.23
+
+- [x] Backtest Function in class `Backtest`
+
+  DDL: 3.23
+
+- [ ] Machine Learning for Subjective Views
+
+  DDL: 4.15
+
+- [ ] BL Model + Backtest for Whole Model
+
+  DDL: 4.15
+
+- [ ] Presentation or Report
+
+  DDL: 4.23
+
+## Test by Raspberry Pi
