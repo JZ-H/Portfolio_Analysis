@@ -17,23 +17,6 @@ library(Cairo)
 setwd("../Black_Litterman_Model")
 options (warn = -1)
 
-## Weights
-# load and melt data
-views <- read.table('view.csv',header=T,sep=",",fileEncoding="UTF-8")
-colnames(views) <- c("Date",colnames(views)[2:16])
-#views$Date <- as.Date(views$Date)
-views_mt <- melt(views,id.vars = 1)
-colnames(views_mt) = c("Date","Gp","Value")
-
-# plot
-CairoPDF('Heatmap_BL_Weight.pdf', width= 9, height = 4)
-ggplot(data = views_mt, aes(x=Date, y=Gp, fill=Value)) + 
-    xlab("")+ ylab("") +
-    scale_fill_gradient2(high = "#5E4FA2")+
-    theme(text=element_text(family="SimHei")) +
-    theme(axis.text.x = element_text(angle = 90, vjust = 1, hjust = 1)) +
-    geom_raster()
-dev.off()
 
 
 ## Asset
@@ -53,3 +36,23 @@ ggplot() +
           axis.line = element_line(colour = "white")) +
     theme(plot.title = element_text(size=10))
 dev.off()
+
+## Heatmap
+# load data
+df <- read.table('view.csv',  sep=",",header=1,fileEncoding="UTF-8")
+colnames(df) <- c("Date",colnames(df)[2:length(colnames(df))])
+df$Date <- ymd(df$Date)
+
+# melt
+df <- melt(df,id.vars = 1)
+colnames(df) <- c("Date","Asset","Value")
+df$Asset <- as.factor(df$Asset)
+
+
+df <- df %>% mutate(year = year(Date),
+                  month = month(Date, label=TRUE),
+                  day = day(Date))
+
+# fill missing value
+df <-df %>% select(day,Asset,month,year,Value)%>%
+        fill(Value) 
