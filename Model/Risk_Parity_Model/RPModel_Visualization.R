@@ -47,7 +47,6 @@ colnames(views) <- c("Date",colnames(views)[2:16])
 #views$Date <- as.Date(views$Date)
 views_mt <- melt(views,id.vars = 1)
 colnames(views_mt) = c("Date","Gp","Value")
-head(views_mt)
 
 # plot
 CairoPDF('Heatmap_RP_Weight.pdf', width= 9, height = 4)

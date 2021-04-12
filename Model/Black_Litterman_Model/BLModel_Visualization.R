@@ -24,7 +24,6 @@ colnames(views) <- c("Date",colnames(views)[2:16])
 #views$Date <- as.Date(views$Date)
 views_mt <- melt(views,id.vars = 1)
 colnames(views_mt) = c("Date","Gp","Value")
-head(views_mt)
 
 # plot
 CairoPDF('Heatmap_BL_Weight.pdf', width= 9, height = 4)
@@ -37,8 +36,9 @@ ggplot(data = views_mt, aes(x=Date, y=Gp, fill=Value)) +
 dev.off()
 
 
-# Asset
+## Asset
 asset <- read.table('BL_Asset.csv',header=T,sep=",",fileEncoding="UTF-8")
+colnames(asset) <- c("Date",colnames(asset)[2:3])
 asset$Date <- as.Date(asset$Date)
 asset <- melt(asset,id.vars = 1)
 colnames(asset) <- c("Date","Model","Value")
