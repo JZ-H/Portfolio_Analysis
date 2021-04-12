@@ -65,7 +65,7 @@ ggplot(df,aes(day,Asset,fill=Value))+
     geom_tile(color= "white",size=0.1) + 
     scale_fill_viridis(name="权重",option ="C") +
     facet_grid(year~month) + 
-    labs(title= "权重热图--主管观点", x="时间-工作日", y="大类资产") +
+    labs(title= "权重热图--主观观点", x="时间-工作日", y="大类资产") +
     scale_y_discrete( breaks = unique(df$Asset)) +
     scale_x_continuous(breaks =c(1,10,20,31)) +
     theme_minimal(base_size = 8) + 
