@@ -42,7 +42,12 @@ class RPModel:
             e = (trc_m-trc_m_t)**2
             return e.sum()
         
-        cons = ({'type': 'eq', 'fun': lambda w: w.sum() - 1 })
+        a = "{'type': 'eq', 'fun': lambda w: w.sum() - 1 }"
+        for i in range(self.num):
+            a = a + ",{'type': 'ineq', 'fun': lambda w: 1 - w["+str(i)+"] }" + \
+            ",{'type': 'ineq', 'fun': lambda w: w["+str(i)+"] + 0.2}"
+    
+        cons = (eval(a))
         w = [1/self.num,]*self.num
         
         # optimization
