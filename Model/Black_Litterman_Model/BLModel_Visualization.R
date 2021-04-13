@@ -37,9 +37,12 @@ ggplot() +
     theme(plot.title = element_text(size=10))
 dev.off()
 
+
 ## Heatmap
 # load data
 df <- read.table('view.csv',  sep=",",header=1,fileEncoding="UTF-8")
+df <- df[,c(-17)]
+
 colnames(df) <- c("Date",colnames(df)[2:length(colnames(df))])
 df$Date <- ymd(df$Date)
 
@@ -56,3 +59,31 @@ df <- df %>% mutate(year = year(Date),
 # fill missing value
 df <-df %>% select(day,Asset,month,year,Value)%>%
         fill(Value) 
+
+######## Plotting starts here#####################
+options(warn=-1)
+CairoPDF("Heatmap_SV_TS_Weights.pdf",width = 12,height = 11)
+ggplot(df,aes(day,Asset,fill=Value))+
+    geom_tile(color= "white",size=0.1) + 
+    scale_fill_viridis(name="权重",option ="C") +
+    facet_grid(year~month) + 
+    labs(title= "权重热图--BL", x="时间-工作日", y="大类资产") +
+    scale_y_discrete( breaks = unique(df$Asset)) +
+    scale_x_continuous(breaks =c(1,10,20,31)) +
+    theme_minimal(base_size = 8) + 
+    theme(legend.position = "bottom")+
+    theme(text=element_text(family="SimHei")) +
+    theme(plot.title=element_text(size = 14))+
+    theme(axis.text.y=element_text(size=6)) +
+    theme(plot.title=element_text(size = 14))+
+    theme(axis.text.y=element_text(size=6)) +
+    theme(plot.title=element_text(size = 14))+
+    theme(axis.text.y=element_text(size=6)) +
+    theme(strip.background = element_rect(colour="white"))+
+    theme(plot.title=element_text(hjust=0))+
+    theme(axis.ticks=element_blank())+
+    theme(axis.text=element_text(size=7))+
+    theme(legend.title=element_text(size=8))+
+    theme(legend.text=element_text(size=6))+
+    removeGrid()
+dev.off()
